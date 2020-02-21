@@ -14,23 +14,7 @@ let characterQuery = fetch("https://rickandmortyapi.com/api/character/")
         window.location.replace("error.html");
     })
 
-/*
-<div class="col-sm-6 col-md-4 col-lg-3">                
-    <div class="card">
-                   
-        <img class="image" src="https://via.placeholder.com/300" alt="Character Name">
-        <div class="details">
-            <h4 class="name">Character Name</h4>
-            <p>Type: Type value here</p>    
-            <p>Episode count: Episode count here</p>                                       
-            <a class="btn btn-primary" href="details.html?id=">Details</a>
-        </div>
-    </div>
-</div>
-
-*/
-
-function removeLoader() {
+function hideLoader() {
     document.querySelector(".loader").style.display = "none";
 }
 
