@@ -5,10 +5,8 @@ let characterQuery = fetch("https://rickandmortyapi.com/api/character/")
         return response.json();
     })
     .then(json => {
-        console.log(json.results);
-        console.log(json.results[0].name);
         createDetailsList(json.results);
-        removeLoader();
+        hideLoader();
     })
     .catch(error => {
         window.location.replace("error.html");
