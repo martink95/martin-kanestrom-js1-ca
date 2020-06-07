@@ -5,21 +5,21 @@ form.addEventListener("submit", validateForm);
 function validateForm(event) {
     event.preventDefault();
     
-    const firstName = form.querySelector("#firstName").value.trim();
-    const lastName = form.querySelector("#lastName").value.trim();
+    const firstName = form.querySelector("#firstName");
+    const lastName = form.querySelector("#lastName");
     const email = form.querySelector("#email").value.trim();
-    const message = form.querySelector("#message").value;
+    const message = form.querySelector("#message");
 
-    if(firstName) {
-        document.querySelector("#firstNameError").style.display = "none";
+    if(firstName.value.trim()) {
+        firstName.nextElementSibling.style.display = "none";
     } else {
-        document.querySelector("#firstNameError").style.display = "block";
+        firstName.nextElementSibling.style.display = "block"
     }
 
-    if(lastName) {
-        document.querySelector("#lastNameError").style.display = "none";
+    if(lastName.value.trim()) {
+        lastName.nextElementSibling.style.display = "none";
     } else {
-        document.querySelector("#lastNameError").style.display = "block";
+        lastName.nextElementSibling.style.display = "block";
     }
 
     let signs = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,10 +35,10 @@ function validateForm(event) {
         document.querySelector("#emailError").style.display = "block";
     }
 
-    if(message.length > 10) {
-        document.querySelector("#messageError").style.display = "none";
+    if(message.value.length > 10) {
+        message.nextElementSibling.style.display = "none";
     } else {
-        document.querySelector("#messageError").style.display = "block";
+        message.nextElementSibling.style.display = "block";
     }
 
 }
